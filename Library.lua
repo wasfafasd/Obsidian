@@ -66,7 +66,7 @@ local Library = {
     Signals = {},
     UnloadSignals = {},
 
-    MinSize = Vector2.new(720, 360),
+    MinSize = Vector2.new(25, 25),
     DPIScale = 1,
     CornerRadius = 4,
 
@@ -91,17 +91,17 @@ local Library = {
 if RunService:IsStudio() then 
     if UserInputService.TouchEnabled and not UserInputService.MouseEnabled then
         Library.IsMobile = true
-        Library.MinSize = Vector2.new(720, 360)
+        Library.MinSize = Vector2.new(25, 25)
     else
         Library.IsMobile = false
-        Library.MinSize = Vector2.new(720, 360)
+        Library.MinSize = Vector2.new(25, 25)
     end
 else
     pcall(function()
         Library.DevicePlatform = UserInputService:GetPlatform()
     end)
     Library.IsMobile = (Library.DevicePlatform == Enum.Platform.Android or Library.DevicePlatform == Enum.Platform.IOS)
-    Library.MinSize = Library.IsMobile and Vector2.new(720, 360) or Vector2.new(720, 360)
+    Library.MinSize = Library.IsMobile and Vector2.new(25, 25) or Vector2.new(25, 25)
 end
 
 local Templates = {
